@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Nikhil Dixit — product and program leader. Case studies including Pulse, a learner intelligence platform.">
+<title>Nikhil Dixit Portfolio</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one reading column; each case study opens with a spec sheet (role, timeline, stack, status), like a product brief. */
+:root{
+  --bg:#E9F3F4; --surface:#FFFFFF; --ink:#102A2E; --muted:#47605F; --line:#C7DDDD;
+  --accent:#0B7A83; --accent-soft:#D3EEEE; --amber:#9A4A12; --amber-soft:#FCE6D8;
+  --coral:#E0613D; --tint-a:#DDF1EF; --tint-b:#FDEBE2; --band:#0B4F57; --band-ink:#F2FAFA;
+  --display:"Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --body:"Source Serif 4", Georgia, "Times New Roman", serif;
+  --mono:"JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1C1F; --surface:#15282C; --ink:#E4F1F1; --muted:#9DB6B5; --line:#264247;
+  --accent:#5CCFD6; --accent-soft:#163C40; --amber:#F2A97A; --amber-soft:#3D2416;
+  --coral:#F2896A; --tint-a:#163A3B; --tint-b:#3A2620; --band:#0F3D43; --band-ink:#E4F7F7; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1C1F; --surface:#15282C; --ink:#E4F1F1; --muted:#9DB6B5; --line:#264247;
+  --accent:#5CCFD6; --accent-soft:#163C40; --amber:#F2A97A; --amber-soft:#3D2416;
+  --coral:#F2896A; --tint-a:#163A3B; --tint-b:#3A2620; --band:#0F3D43; --band-ink:#E4F7F7; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;
+  padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px));padding-block:0}
+.wrap{max-width:780px;margin:0 auto;padding-block:56px 72px;display:flex;flex-direction:column;gap:64px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.15}
+p{margin:0}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
+.label{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.stack{display:flex;flex-direction:column;gap:16px}
+.ph{color:var(--amber);background:var(--amber-soft);padding:0 4px;border-radius:3px;font-family:var(--mono);font-size:.85em}
+
+/* Intro */
+header{display:flex;flex-direction:column;gap:20px}
+header h1{font-size:clamp(34px,6vw,50px);font-weight:700;letter-spacing:-.01em}
+.lede{font-size:20px;color:var(--ink);max-width:640px}
+.links{display:flex;flex-wrap:wrap;gap:8px 20px;font-family:var(--mono);font-size:14px}
+.facts{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-family:var(--mono);font-size:12.5px;border:1px solid var(--line);border-radius:999px;padding:3px 10px;color:var(--muted);background:var(--surface)}
+
+/* Index */
+.index{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.index li{border-bottom:1px solid var(--line)}
+.index a{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 16px;padding:14px 0;text-decoration:none;color:var(--ink)}
+.index a:hover .t{color:var(--accent)}
+.index .t{font-family:var(--display);font-weight:600;font-size:18px}
+.index .d{grid-column:1/-1;color:var(--muted);font-size:15px}
+.index .k{font-family:var(--mono);font-size:12px;color:var(--muted);align-self:center}
+
+/* Case study */
+section.case{display:flex;flex-direction:column;gap:24px;scroll-margin-top:24px}
+.case h2{font-size:clamp(26px,4.4vw,34px);font-weight:700}
+.case h3{font-size:19px;font-weight:600}
+.spec{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border:1px solid var(--line);border-radius:6px;background:var(--surface);margin:0}
+.spec div{padding:12px 14px;border-left:1px solid var(--line);min-width:0}
+.spec div:first-child{border-left:0}
+.spec dt{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.spec dd{margin:4px 0 0;font-family:var(--display);font-size:15px;font-weight:500;line-height:1.35}
+.status{display:inline-block;font-family:var(--mono);font-size:11.5px;padding:1px 8px;border-radius:999px;background:var(--accent-soft);color:var(--accent)}
+.status.wip{background:var(--amber-soft);color:var(--amber)}
+
+.metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.metric{border-top:3px solid var(--coral);padding:12px 14px;background:var(--surface);border-radius:0 0 6px 6px}
+.metric b{color:var(--accent)}
+header h1{color:var(--band)}
+:root[data-theme="dark"] header h1{color:var(--ink)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) header h1{color:var(--ink)}}
+.chip{border-color:var(--accent-soft)!important;background:var(--accent-soft)!important;color:var(--accent)!important}
+.decision{border-top:3px solid var(--accent)}
+.decision h4{color:var(--accent)}
+.small:nth-child(1){border-top:3px solid var(--accent)}
+.small:nth-child(2){border-top:3px solid var(--coral)}
+.case .label,.stack>.label{color:var(--accent)}
+.spec{border-color:var(--accent-soft)!important}
+.spec dt{color:var(--accent)!important}
+.metric b{display:block;font-family:var(--display);font-size:26px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.2}
+.metric span{font-size:14.5px;color:var(--muted)}
+
+ol.phases{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+ol.phases li{display:grid;grid-template-columns:92px minmax(0,1fr);gap:16px;padding:12px 0;border-top:1px solid var(--line)}
+ol.phases li:last-child{border-bottom:1px solid var(--line)}
+.when{font-family:var(--mono);font-size:12.5px;color:var(--muted);padding-top:3px}
+.phases strong{font-family:var(--display);font-weight:600}
+
+.decisions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.decision{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:16px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.decision h4{margin:0;font-family:var(--display);font-size:16px;font-weight:600;line-height:1.3}
+.decision p{font-size:15.5px;color:var(--muted)}
+
+ul.plain{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px}
+.note{font-size:15px;color:var(--muted);border-left:2px solid var(--line);padding-left:14px}
+
+.small-cases{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.small{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:20px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.small h3{font-size:18px}
+.small p{font-size:15.5px}
+
+/* Experience */
+.roles{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.roles li{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:16px;padding:14px 0;border-top:1px solid var(--line)}
+.roles .org{font-family:var(--display);font-weight:600}
+.roles .org small{display:block;font-family:var(--mono);font-weight:400;font-size:12px;color:var(--muted)}
+
+.contact{background:var(--band);color:var(--band-ink);border-radius:8px;padding:28px;display:flex;flex-direction:column;gap:14px}
+.contact h2{font-size:26px}
+.contact a{color:var(--band-ink)}
+.contact .label{color:var(--band-ink)!important;opacity:.8}
+.sel{user-select:all}
+.offers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.offers p{font-size:15.5px;opacity:.9}
+
+@media (max-width:640px){
+  body{font-size:16px}
+  .spec{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .spec div:nth-child(3){border-left:0}
+  .spec div:nth-child(n+3){border-top:1px solid var(--line)}
+  .metrics,.decisions,.small-cases,.offers{grid-template-columns:minmax(0,1fr)}
+  ol.phases li,.roles li{grid-template-columns:minmax(0,1fr);gap:4px}
+}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+</style>
+<style>[hidden]{display:none!important}</style>
+</head>
+<body style="margin:0">
+
+<div class="wrap">
+
+<header>
+  <span class="label">Product &amp; Program Leader · Bengaluru</span>
+  <h1>Nikhil Dixit</h1>
+  <p class="lede">I take products from a messy problem to a working, validated build, covering the business case, the delivery plan and, when it helps, the code. 11 years across EdTech, state government and manufacturing.</p>
+  <div class="facts">
+    <span class="chip">Sr. Program Manager, upGrad</span>
+    <span class="chip">AI Products</span>
+    <span class="chip">PMP</span>
+  </div>
+  <div class="links">
+    <a href="https://github.com/nikhilndixit">github.com/nikhilndixit</a>
+    <a href="https://www.linkedin.com/in/nikhil-dixit">linkedin.com/in/nikhil-dixit</a>
+    <span class="sel">nikhil.n.dixit@gmail.com</span>
+  </div>
+</header>
+
+<nav aria-label="Selected work" class="stack">
+  <span class="label">Selected work</span>
+  <ul class="index">
+    <li><a href="#pulse"><span class="t">Pulse: customer intelligence platform</span><span class="k">Built solo · 2026</span><span class="d">Connects six fragmented data sources into a unified learner intelligence layer, combining AI-driven insights across learner profiles, learning journeys, and outcomes to uncover improvement opportunities and enable data-backed product decisions.</span></a></li>
+    <li><a href="#ai-portfolio"><span class="t">AI product portfolio</span><span class="k">Product &amp; program ops</span><span class="d">Led end-to-end product strategy, design, development, and launches across MLOps, GenAI, and Agentic AI, anticipating market shifts to build differentiated offerings, including early GenAI and advanced Agentic AI certifications in edtech, within a portfolio driving ~30% of company revenue. Currently expanding into LLM engineering and deployment to address emerging industry needs.</span></a></li>
+    <li hidden><a href="#more"><span class="t">Smaller projects and explorations</span><span class="k">Analysis · concepts</span><span class="d">Assessment quality analytics, a public-services data product concept, and market teardowns.</span></a></li>
+  </ul>
+</nav>
+
+<!-- PULSE -->
+<section class="case" id="pulse">
+  <div class="stack" style="gap:10px">
+    <span class="label">Case study 01</span>
+    <h2>Pulse: one view of every customer, across every team that serves them</h2>
+  </div>
+
+  <dl class="spec">
+    <div><dt>Role</dt><dd>Self-initiated. Problem, design and code</dd></div>
+    <div><dt>Timeline</dt><dd>Aug – Oct 2026, 5 phases</dd></div>
+    <div><dt>Stack</dt><dd>Python, MySQL, Streamlit, REST/GraphQL APIs, local LLM</dd></div>
+    <div><dt>Status</dt><dd><span class="status wip">Fine-tuning</span></dd></div>
+  </dl>
+
+  <div class="stack">
+    <h3>The problem</h3>
+    <p>At my current company, everything we know about a customer sat in six systems owned by different teams: content ratings, live-session ratings, two separate support helpdesks, surveys and a reporting tool. None of them shared an ID. Answering "how are our customers experiencing every part of the product?" meant manual exports, spreadsheet stitching and several cross-functional meetings. Problems surfaced after customers had already disengaged.</p>
+    <p>Nobody had asked me to fix this. I scoped it, got data access, and built it outside my core role.</p>
+  </div>
+
+  <div class="metrics">
+    <div class="metric"><b>6 → 1</b><span>data sources unified into one searchable profile</span></div>
+    <div class="metric"><b>4–5 hrs → ~5 min</b><span>to assemble a full customer picture</span></div>
+    <div class="metric"><b>64</b><span>automated tests on the pipeline and AI layer</span></div>
+  </div>
+
+  <div class="stack">
+    <h3>How I shipped it</h3>
+    <p>Each phase had to be useful on its own before the next one started.</p>
+    <ol class="phases">
+      <li><span class="when">Phase 1 · Aug–Sep</span><div><strong>Customer ratings analysis</strong> using CSV exports to validate the value of customer feedback insights before investing in integrations, with explicit data-quality tracking to flag bad or missing records rather than silently dropping them.</div></li>
+      <li><span class="when">Phase 2 · Sep</span><div><strong>Live API ingestion and data standardisation</strong> into MySQL, mapping disparate sources to a shared vocabulary and validating API metrics against CSV exports to establish a reliable, unified data foundation for learner intelligence.</div></li>
+      <li><span class="when">Phase 3 · Oct</span><div><strong>Consolidated learner journey dashboard</strong> bringing together customer profiles, subjective feedback captured through the LMS, course progress, and evaluation metrics such as marks and grades to provide a unified view of the learner experience and outcomes.</div></li>
+      <li><span class="when">Phase 4 · Oct</span><div><strong>Unified learner intelligence layer</strong> combining structured journey metrics with unstructured support tickets and escalations to surface actionable insights, identify recurring pain points, and accelerate data-driven product and program decisions.</div></li>
+      <li><span class="when">Phase 5 · Oct</span><div><strong>LLM based conversational learner intelligence</strong> enabling users to query individual learners, programs, or cohorts using customer emails or natural-language prompts, generating tailored dashboards and concise summaries to translate complex data into actionable insights.</div></li>
+    </ol>
+  </div>
+
+  <div class="stack">
+    <h3>Product decisions</h3>
+    <div class="decisions">
+      <div class="decision"><h4>The AI never produces a number</h4><p>SQL fetches every figure. The model only reads the request, picks components from a fixed list and writes a summary. Any number in that summary that doesn't match the data hides the summary.</p></div>
+      <div class="decision"><h4>Prove value before plumbing</h4><p>The first dashboard ran on CSV uploads. APIs, scheduling and storage came only after people found the views useful.</p></div>
+      <div class="decision"><h4>Measure the model before choosing it</h4><p>A 30-prompt evaluation set with a pass bar: plan correct 90% of the time, valid layout every time, zero invented numbers. The plan is to pick the smallest model that passes.</p></div>
+      <div class="decision"><h4>Privacy by design</h4><p>Runs on a local open-source model. Code finds customer emails and masks them before anything reaches the model.</p></div>
+    </div>
+  </div>
+
+  <div class="stack">
+    <h3>Where it stands</h3>
+    <ul class="plain">
+      <li>Working end to end as a pilot on my machine, on real data.</li>
+      <li>Next: run the model comparison, put it in front of 2–3 users for a week, then find it a hosted home and an engineering owner.</li>
+      <li>Later: log which issues were actioned and how they turned out, so Pulse can start suggesting fixes from past outcomes.</li>
+    </ul>
+    <p class="note">The public repo is a standalone version on synthetic data. It contains no company data, schema or system names. <a href="https://github.com/nikhilndixit">See it on GitHub</a>.</p>
+  </div>
+</section>
+
+<!-- AI PORTFOLIO -->
+<section class="case" id="ai-portfolio">
+  <div class="stack" style="gap:10px">
+    <span class="label">Case study 02</span>
+    <h2>Building AI products while the field was changing under them</h2>
+  </div>
+
+  <dl class="spec">
+    <div><dt>Role</dt><dd>Product &amp; program operations lead</dd></div>
+    <div><dt>Scope</dt><dd>Data, ML &amp; GenAI portfolio</dd></div>
+    <div><dt>Scale</dt><dd>~30% of company revenue</dd></div>
+    <div><dt>Status</dt><dd><span class="status">Ongoing</span></dd></div>
+  </dl>
+
+  <div class="stack">
+    <p>I lead product and program operations for upGrad's Data, ML and GenAI portfolio. Over the period when generative AI went from a research topic to what customers were asking for by name, my work was deciding what to build next and getting it launched.</p>
+    <ul class="plain">
+      <li>Developed new tracks in <strong>MLOps</strong>, <strong>Generative AI</strong> and <strong>Agentic AI</strong>.</li>
+      <li>Worked on an <strong>Executive Programme in Generative AI and Agentic AI for Leaders</strong>, aimed at senior decision-makers rather than practitioners.</li>
+      <li>Currently designing an <strong>LLM Engineering and Deployment</strong> program.</li>
+    </ul>
+    <p>The product skill this built is reading where a fast-moving technology is going, deciding which shift is real demand and which is noise, and turning it into a product customers pay for.</p>
+  </div>
+</section>
+
+<!-- SMALLER -->
+<section class="case" id="more" hidden>
+  <div class="stack" style="gap:10px">
+    <span class="label">Smaller projects and explorations</span>
+    <h2>Analysis and early-stage product thinking</h2>
+  </div>
+  <div class="small-cases">
+    <div class="small">
+      <span class="label">Analytics · shipped</span>
+      <h3>Assessment quality analysis</h3>
+      <p>Enriched mock exam question banks across six tracks (Data Science, ML, Data Analytics, Data Engineering, GenAI and MLOps) with learner pass rates, then built a notebook workflow to rate each question's difficulty. This made weak or miscalibrated questions visible.</p>
+    </div>
+    <div class="small">
+      <span class="label">Product concept · exploring</span>
+      <h3>Public services, mapped</h3>
+      <p>An LLM-powered map view of Indian public services such as schools and sanitation, by state and district, across sectors. Existing portals each cover one sector. This draws on my time as a Chief Minister's Fellow.</p>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="stack" aria-labelledby="exp">
+  <span class="label" id="exp">Experience</span>
+  <ul class="roles">
+    <li><div class="org">upGrad<small>EdTech</small></div><div>Senior Program Manager | AI Product Development | GTM Strategy | Portfolio Growth &amp; Execution</div></li>
+    <li><div class="org">Government of Maharashtra<small>Public sector</small></div><div>Chief Minister's Fellow | Public Sector Transformation | Digital Product Strategy | Project Management | PPP &amp; Livelihoods</div></li>
+    <li><div class="org">Kalyani Forge Ltd.<small>Manufacturing</small></div><div>Product Portfolio Strategy | Roadmap Ownership | Market Entry | Strategic Partnerships</div></li>
+  </ul>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" aria-labelledby="contact-h">
+  <h2 id="contact-h">Let's talk</h2>
+  <div class="offers">
+    <div class="stack" style="gap:6px"><span class="label">Roles</span><p>Open to Senior Product Manager and Senior Program Manager roles in SaaS, fintech and product companies.</p></div>
+    <div class="stack" style="gap:6px"><span class="label">Independent projects</span><p>Taking on a few projects: turning a product idea or messy process into a validated MVP, and decision-ready market and competitor analysis.</p></div>
+  </div>
+  <div class="links"><a href="https://github.com/nikhilndixit">github.com/nikhilndixit</a><span class="sel">nikhil.n.dixit@gmail.com</span><a href="https://www.linkedin.com/in/nikhil-dixit">linkedin.com/in/nikhil-dixit</a></div>
+</section>
+
+</div>
+</body>
+</html>
